@@ -7,7 +7,8 @@ public class main{
 
         System.out.println("Welcome to power rule calculator!\nEnter a single term (in terms of x) to do the power rule on.\n------------------------------------------------------------");
         String term = input.nextLine();
-
+        
+        //while loop that lets you continue to use the calculator until you type "exit"
         while(!term.equals("exit")){
             String newTerm = "";
 
@@ -42,6 +43,7 @@ public class main{
                         newTerm += newCoefficient + "x^" + newExponent;
                         System.out.println("The derivative of " + term + " is " + newTerm);
                     }
+                    
                 //case 2: does not have coefficient (coefficient is 1)
                 }else if(term.indexOf('x') == 0){
                     int exponent = Integer.parseInt(term.substring(term.indexOf("^") + 1, term.length()));
@@ -88,15 +90,6 @@ public class main{
     //method that returns true if term contains an exponent AND a coefficient 
     public static boolean hasCoeffAndExp(String testTerm){
         if(hasVariable(testTerm) && hasExponent(testTerm)){
-            return true;
-        }
-        return false;
-    }
-}
-
-    //method that returns true if term contains an exponent (denoted by ^), false if not
-    public static boolean hasExponent(String testTerm){
-        if(testTerm.contains("^")){
             return true;
         }
         return false;
